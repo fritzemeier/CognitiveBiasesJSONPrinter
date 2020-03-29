@@ -1,5 +1,5 @@
 # CognitiveBiasesJSONPrinter
-Written to more easily digest the list of JSON data.
+Written to help digest the list of JSON data.
 
 # Dependencies
 Python3 should have all dependencies for this project.
