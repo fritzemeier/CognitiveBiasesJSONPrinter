@@ -50,6 +50,7 @@ def main():
 		"\n     Select '"+exitChar+"' to exit.")
 
 		print("\nResults will appear in paginated form.",
+			"\nUse 'Page Up', 'Page Down' or arrow keys to scroll.",
 			"\nTo return to this menu, hit 'q'.")
 
 		if selectIndex != "":
