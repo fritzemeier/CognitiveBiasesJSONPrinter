@@ -21,10 +21,12 @@ def main():
 				cNames.append(child[key])
 
 	allChar = 'a'
-	exitChar = 'q'
+	exitChar = 'e'
 
 	runProgram = True
 	errorAction = True
+
+	selectIndex = ""
 
 	while runProgram:
 
@@ -33,16 +35,21 @@ def main():
 		page = ""
 
 		print()
-		for name in cNames:
-			print(name)
 
-		print("\nOptions:",
-		"\n     Pick a number between 1 and "+str(len(cNames))+".",
+		print("\nOptions:")
+
+		for name in cNames:
+			print("     "+name)
+
+		print(
 		"\n     Select '"+allChar+"' to view all.",
 		"\n     Select '"+exitChar+"' to exit.")
 
 		print("\nResults will appear in paginated form.",
 			"\nTo return to this menu, hit 'q'.")
+
+		if selectIndex != "":
+			print("\nLast selection: "+selectIndex)
 
 		selectIndex = input("\nSelect index and press enter: ")
 
@@ -67,7 +74,7 @@ def main():
 			else:
 				errorAction = True
 		except:
-			if selectIndex == allChar:
+			if selectIndex.lower() == allChar:
 				# click.clear()
 				for child in jData["children"]:
 					page += "\n\n"+child["name"]+"\n"
@@ -79,7 +86,7 @@ def main():
 
 						page += "\n\n"
 				errorAction = False
-			elif selectIndex == exitChar:
+			elif selectIndex.lower() == exitChar:
 				errorAction = False
 				runProgram = False
 			else:
