@@ -5,4 +5,4 @@ Written to more easily digest the list of JSON data.
 Python3 should have all dependencies for this project.
 
 # Cheat Sheet Data
-Data copied from [https://github.com/busterbenson/public/blob/master/cognitive-bias-cheat-sheet.json]here.
+Data copied from [here.](https://github.com/busterbenson/public/blob/master/cognitive-bias-cheat-sheet.json])
