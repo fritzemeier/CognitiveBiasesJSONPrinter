@@ -38,10 +38,14 @@ def main():
 
 		print("\nOptions:")
 
-		for name in cNames:
-			print("     "+name)
+		for index in range(0,(len(cNames))):
+			if cNames[index].startswith(str(index+1)):
+				print("     "+cNames[index])
+			else:
+				print("     "+str(index+1)+". "+cNames[index])
 
 		print(
+		"\n     Select the number of one of the above indexes."
 		"\n     Select '"+allChar+"' to view all.",
 		"\n     Select '"+exitChar+"' to exit.")
 
@@ -51,11 +55,10 @@ def main():
 		if selectIndex != "":
 			print("\nLast selection: "+selectIndex)
 
-		selectIndex = input("\nSelect index and press enter: ")
+		selectIndex = input("\nSelect option and press enter: ")
 
 		try:
 			if (int(selectIndex) > 0 and int(selectIndex) <= len(cNames)):
-				# click.clear()
 				fmtIndex = int(selectIndex)-1
 
 				selectName = cNames[fmtIndex]
@@ -75,7 +78,6 @@ def main():
 				errorAction = True
 		except:
 			if selectIndex.lower() == allChar:
-				# click.clear()
 				for child in jData["children"]:
 					page += "\n\n"+child["name"]+"\n"
 
