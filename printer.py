@@ -1,11 +1,17 @@
-import json,sys,click,pydoc
+import json,sys,click,pydoc,requests
 
 def main():
 
 	jData = {}
 
-	with open("cb.json","r") as jFile:
-		jData = json.load(jFile)
+	dataUrl = "https://raw.githubusercontent.com/busterbenson/public/master/cognitive-bias-cheat-sheet.json"
+
+	getData = requests.get(dataUrl)
+
+	dataJson = getData.text
+
+	jData = json.loads(dataJson)
+
 
 	cNames = []
 
